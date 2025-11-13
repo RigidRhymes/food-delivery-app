@@ -5,52 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2634a28-d803-4cad-9fc2-26d8acf22977" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(auth)/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(auth)/sign-in.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(auth)/sign-up.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/cart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/profile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/search.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/CartButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metro.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nativewind-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/sign-in.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/sign-in.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/sign-up.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/sign-up.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/android-icon-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/android-icon-foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/android-icon-monochrome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/partial-react-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/splash-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/external-link.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/haptic-tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/hello-wave.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/parallax-scroll-view.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/themed-text.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/themed-view.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/collapsible.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.ios.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/theme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/use-color-scheme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/use-color-scheme.web.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/use-theme-color.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Filter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MenuCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/MenuCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/appwrite.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/appwrite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/seed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/useAppwrite.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/useAppwrite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metro.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/metro.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/reset-project.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/auth.store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/auth.store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +37,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -76,15 +57,22 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/Rhymes/Desktop/food-delivery",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.ai.coding.my.settings.CodeAssistSettingsConfigurable",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.jsOptions",
+    "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "C:\\Users\\Rhymes\\Desktop\\food-delivery\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -99,6 +87,9 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rhymes\Desktop\food-delivery" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rhymes\Desktop\food-delivery\app\(tabs)" />
       <recent name="C:\Users\Rhymes\Desktop\food-delivery" />
@@ -108,7 +99,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.29188.1" />
       </set>
     </attachedChunks>
   </component>
@@ -120,12 +111,34 @@
       <option name="presentableId" value="Default" />
       <updated>1762824519782</updated>
       <workItem from="1762824525876" duration="5893000" />
-      <workItem from="1762830742354" duration="7623000" />
+      <workItem from="1762830742354" duration="11137000" />
+      <workItem from="1762850824395" duration="619000" />
+      <workItem from="1762844103044" duration="632000" />
+      <workItem from="1762846012959" duration="1281000" />
+      <workItem from="1762891546149" duration="99000" />
+      <workItem from="1762902344900" duration="1305000" />
+      <workItem from="1762935450901" duration="19302000" />
+      <workItem from="1762957273179" duration="3650000" />
+      <workItem from="1762961524740" duration="7477000" />
+      <workItem from="1762979618336" duration="7148000" />
+      <workItem from="1763014754408" duration="9362000" />
+      <workItem from="1763024815374" duration="6677000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="ai.zencoder.plugin.mcp">
     <option name="internalToolsState" value="{&quot;file_search&quot;:true,&quot;list_resources&quot;:true,&quot;fulltext_search&quot;:true,&quot;read_resource&quot;:true}" />

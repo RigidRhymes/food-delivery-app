@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ai.zencoder.plugin.chat.index">
+    <option name="activeChatId" value="649b4cda-f6e7-4907-9d88-058519c8aa8f" />
+    <option name="chatMetadata" value="{&quot;649b4cda-f6e7-4907-9d88-058519c8aa8f&quot;:{&quot;id&quot;:&quot;649b4cda-f6e7-4907-9d88-058519c8aa8f&quot;,&quot;title&quot;:&quot;Explain this: {ID.unique(), email, password, na...&quot;,&quot;createdAt&quot;:1762942162465,&quot;updatedAt&quot;:1762942175307,&quot;isNameGenerated&quot;:true,&quot;messageCount&quot;:2,&quot;lastMessagePreview&quot;:&quot;Something went wrong. Please try again later&quot;}}" />
+  </component>
+</project>

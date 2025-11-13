@@ -1,0 +1,100 @@
+{
+    "checksum": "96904f14f7d0b5e4881632b8a54dfeecc26110241eeacfde4163dc02cae17e46",
+    "data": {
+    "id": "649b4cda-f6e7-4907-9d88-058519c8aa8f",
+    "createdAt": 1762942162465,
+    "updatedAt": 1762942175307,
+    "title": "Explain this: {ID.unique(), email, password, na...",
+    "messages": [
+        {
+            "id": "c60aed8b-0ec8-46d5-912d-24749354dfb8",
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Explain this:"
+                },
+                {
+                    "type": "codeSnippet",
+                    "text": "{ID.unique(), email, password, name}",
+                    "language": "typescript"
+                },
+                {
+                    "type": "text",
+                    "text": "TS2353: Object literal may only specify known properties, and 'ID' does not exist in type '{ userId: string; email: string; password: string; name?: string | undefined; }'."
+                }
+            ],
+            "context": {
+                "currentFile": {
+                    "path": "C:\\Users\\Rhymes\\Desktop\\food-delivery\\lib\\appwrite.ts",
+                    "fsPath": "C:/Users/Rhymes/Desktop/food-delivery/lib/appwrite.ts",
+                    "content": "import { CreateUserParams, SignInParams } from \"@/type\";\nimport { Account, Avatars, Client, Databases, ID } from \"react-native-appwrite\";\n\nexport const appwriteConfig={\n    endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,\n    platform: \"com.digitall.foodapp\",\n    projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,\n    databaseId: \"6912f1ca003d3cb708f9\",\n    projectName: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_NAME,\n    userCollectionId: \"691452d6003e6ce4cac9\"\n}\n\n\nexport const client = new Client()\n\nclient\n    .setEndpoint(appwriteConfig.endpoint!)\n    .setProject(appwriteConfig.projectId!)\n    .setPlatform(appwriteConfig.platform!)\n\nexport const account = new Account(client);\nexport const databases = new Databases(client);\nconst avatars = new Avatars(client);\n\nexport const createUser = async({email, password, name}: CreateUserParams) => {\n    try {\n        const newAccount = await account.create({ID.unique(), email, password, name})\n        if(!newAccount) throw new Error('Failed to create user')\n\n        \n    }catch (e){\n        throw new Error(e as string)\n    }\n}\n\n\n\nexport const signIn = async({email, password}: SignInParams) => {\n    try {\n        const session = await account.createEmailPasswordSession(email,password)\n        return session\n    } catch (e) {\n        throw new Error(e as string)\n    }\n}\n",
+                    "language": "typescript"
+                }
+            },
+            "createdAt": 1762942162527,
+            "isInternal": false,
+            "rawContent": {
+                "type": "doc",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "Explain this:"
+                            },
+                            {
+                                "type": "codeBlock",
+                                "attrs": {
+                                    "language": "typescript"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "{ID.unique(), email, password, name}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "text",
+                                "text": "TS2353: Object literal may only specify known properties, and 'ID' does not exist in type '{ userId: string; email: string; password: string; name?: string | undefined; }'."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "autoAppliedRules": []
+        },
+        {
+            "id": "30b45618-e6c2-42f5-b2ca-146fc6981e1a",
+            "role": "system",
+            "content": [
+                {
+                    "type": "errorText",
+                    "text": "Something went wrong. Please try again later",
+                    "actions": [
+                        {
+                            "type": "externalAction",
+                            "title": "Regenerate",
+                            "action": "regenerateLastAnswer"
+                        }
+                    ]
+                }
+            ],
+            "createdAt": 1762942175307,
+            "isInternal": false
+        }
+    ],
+    "isAgent": false,
+    "isNameGenerated": true,
+    "isCustomAgent": false,
+    "isUnitTestsAgent": false,
+    "isE2EAgent": false,
+    "isWebDevAgent": false,
+    "isQnaAgent": true,
+    "isRepoInfoAgent": false,
+    "model": "default",
+    "agentsRuntime": "zen-cli"
+}
+}
