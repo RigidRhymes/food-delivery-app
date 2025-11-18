@@ -40,6 +40,7 @@ import pizzaOne from "@/assets/images/pizza-one.png";
 import salad from "@/assets/images/salad.png";
 import success from "@/assets/images/success.png";
 import tomatoes from "@/assets/images/tomatoes.png";
+import notfound from "@/assets/images/not-found.png";
 
 export const CATEGORIES = [
     {
@@ -64,6 +65,47 @@ export const CATEGORIES = [
     },
 ];
 
+export const profileImages = [
+    {
+        id: 1,
+        title: "Full Name",
+        image: user,
+        color: "#DF5A0C",
+        key: 'name'
+    },
+
+    {
+        id: 2,
+        title: "Email",
+        image: envelope,
+        color: "#DF5A0C",
+        key: 'email'
+    },
+    {
+        id: 3,
+        title: "Phone Number",
+        image: phone,
+        color: "#DF5A0C",
+        key: 'phone'
+    },
+
+    {
+        id: 4,
+        title: "Address 1 (Home)",
+        image: location,
+        color: "#DF5A0C",
+        key: 'address'
+    },
+
+    {
+        id: 5,
+        title: "Address 2 (work)",
+        image: location,
+        color: "#DF5A0C",
+        key: 'address'
+    }
+
+]
 export const offers = [
     {
         id: 1,
@@ -199,4 +241,5 @@ export const images = {
     star,
     trash,
     user,
+    notfound,
 };

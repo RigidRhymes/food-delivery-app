@@ -1,4 +1,4 @@
-import {View, Text, Button, FlatList,} from 'react-native'
+import {View, Text, Button, FlatList, Image,} from 'react-native'
 import {SafeAreaView} from "react-native-safe-area-context";
 import useAppwrite from "@/lib/useAppwrite";
 import {getCategories, getMenu} from "@/lib/appwrite";
@@ -10,6 +10,7 @@ import MenuCard from "@/components/MenuCard";
 import {MenuItem} from "@/type";
 import Filter from "@/components/Filter";
 import SearchBar from "@/components/SearchBar";
+import {images} from "../../constants";
 
 
 
@@ -55,7 +56,15 @@ const Search = () => {
                           </View>
                       )}
 
-                ListEmptyComponent={() => !loading && <Text className='text-dark-100 font-bold '>No Result Found!</Text>}
+                ListEmptyComponent={() => !loading &&
+                    <View className='flex flex-col items-center justify-center gap-5'>
+                        <View>
+                            <Image source={images.notfound} className='size-100' resizeMode='contain'/>
+                        </View>
+                        <Text className='text-dark-100 font-bold '>Nothing match your search</Text>
+                        <Text className='text-sm text-gray-200'>Try a different search term or check for typos</Text>
+                    </View>
+            }
             />
         </SafeAreaView>
     )

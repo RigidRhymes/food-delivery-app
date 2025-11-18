@@ -15,6 +15,7 @@ const Filter = ({categories}:{categories: Category}) => {
         else router.setParams({category: id})
     }
 
+    // @ts-ignore
     const filterData : (Category | {$id: string, name: string})[] = categories
     ? [{$id: 'all', name: 'All'}, ...categories] : [{$id: 'all', name: 'All'}]
 

@@ -20,6 +20,9 @@ export interface User extends Models.Document {
     name: string;
     email: string;
     avatar: string;
+    phone: string;
+    imageUri: string;
+    profileImage: string;
 }
 
 export interface CartCustomization {
@@ -104,4 +107,13 @@ interface SignInParams {
 interface GetMenuParams {
     category: string;
     query: string;
+}
+
+interface GetUpdateParams{
+    name: string;
+    email: string;
+    phone: string;
+    password?: string;
+    address1?: string;
+    address2?: string;
 }

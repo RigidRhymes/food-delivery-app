@@ -11,13 +11,11 @@ const SignIn = () => {
     const [form, setForm] = useState({email: '', password: ''})
 
     const submit = async() => {
-        const {email, passowrd} = form
+        const {email, password} = form
         if(!email || !password) return Alert.alert('Error', 'Please fill all the fields')
         setIsSubmitting(true)
-
         try{
             await signIn({email, password})
-
             router.replace('/')
         }catch (error: any){
             Alert.alert('Error', error.message)

@@ -1,5 +1,5 @@
-import {CreateUserParams, GetMenuParams, SignInParams} from "@/type"
-import {Client, Account, Databases, Avatars, ID, Query, Storage} from "react-native-appwrite"
+import {CreateUserParams, GetMenuParams, GetUpdateParams, SignInParams} from "@/type"
+import {Account, Avatars, Client, Databases, ID, Query, Storage} from "react-native-appwrite"
 
 export const appwriteConfig={
     endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
@@ -107,5 +107,27 @@ export const getCategories = async() => {
         return categories.documents
     }catch (e){
         throw new Error(e as string)
+    }
+}
+
+export const updateUser = async($id:string, {name, email, password, phone, address1, address2 }: GetUpdateParams ) => {
+
+    try {
+        return await databases.updateDocument(
+            appwriteConfig.databaseId,
+            appwriteConfig.useCollectionId,
+            $id,
+            {name, email, password, phone, address1, address2}
+        )
+    }catch (e){
+        throw new Error(e as string)
+    }
+}
+
+export const getLogOut = async() => {
+    try {
+    await account.deleteSession('current')
+    } catch (error: any){
+        throw new Error(error?.message || "Failed to log out. Please try again later.")
     }
 }
