@@ -5,28 +5,28 @@ import {images} from "@/constants";
 import CustomInput from '@/components/CustomInput';
 import CustomButton from "@/components/CustomButton";
 import {router} from "expo-router";
-import {updateUser} from "@/lib/appwrite";
+import useAuthStore from "@/store/auth.store";
+
 
 const EditProfile = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [saving, setSaving] = useState(false)
     const [form, setForm] = useState({'name': '', 'email': '', 'phone': '', 'address1': '', 'address2': '', 'password': '',  })
 
-    const submitForm = async () => {
-        const {name, email, phone, address1, address2, password} = form
-        if(!name || !email || !phone || !address1) {
-            Alert.alert('Error', 'Please fill all the fields')
-            return;
-        }
-        setIsSubmitting(true)
-
+    const {updateProfile} = useAuthStore()
+    const handleSave = async () => {
         try {
-            await updateUser({name, email, password, phone, address1, address2})
-            Alert.alert('Success', 'Profile Updated Successfully')
-            router.push('/profile')
+            setSaving(true)
+            await updateProfile({
+                phone: form.phone,
+                address1: form.address1,
+                address2: form.address2
+            })
+            Alert.alert('Success', "Profile updated successfully")
+            router.back()
         }catch (error: any){
-            Alert.alert('Error', error.message)
+            Alert.alert('Error', "Failed to update profile")
         } finally {
-            setIsSubmitting(false)
+            setSaving(false)
         }
     }
     return (
@@ -71,8 +71,8 @@ const EditProfile = () => {
                         value={form.address2}
                         onChangeText={text => setForm({...form, address2: text})}
                     />
-                    <CustomButton title='Save Changes' onPress={submitForm}
-                    isLoading={isSubmitting}
+                    <CustomButton title='Save Changes' onPress={handleSave}
+                    isLoading={saving}
                     />
                 </View>
             </View>

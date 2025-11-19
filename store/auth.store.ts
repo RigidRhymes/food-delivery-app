@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import {User} from "@/type";
-import {isLoading} from "expo-font";
-import {getCurrentUser} from "@/lib/appwrite";
+import {getCurrentUser, updateUser} from "@/lib/appwrite";
+
 
 
 type AuthState ={
@@ -14,10 +14,24 @@ type AuthState ={
     setUser: (user: User | null) => void;
     setLoading: (loading: boolean) => void;
 
-
     fetchAuthenticatedUser: () => Promise<void>
-}
-const useAuthStore = create<AuthState>((set) => ({
+
+    updateProfile: (data: Partial<User>) => Promise<void>
+};
+
+const mapToUser = (doc: any): User => ({
+    $id: doc.$id,
+    name: doc.name,
+    email: doc.email,
+    avatar: doc.avatar,
+    phone: doc.phone,
+    address1: doc.address1,
+    address2: doc.address2,
+    profileImage: doc.avatar,
+    imageUri: doc.avatar,
+});
+
+const useAuthStore = create<AuthState>((set, get) => ({
     isAuthenticated: false,
     user: null,
     isLoading: true,
@@ -31,6 +45,22 @@ const useAuthStore = create<AuthState>((set) => ({
     setProfileImage: (uri: string) => set((state) => ({
         user: state.user? {...state.user, profileImage: uri} : null
     })),
+
+    updateProfile: async(data) => {
+        const currentUser = get().user;
+        if(!currentUser) return;
+
+        try {
+            const updatedUser = await updateUser(currentUser.$id, {
+                ...data,
+            });
+
+            set({user: mapToUser(updatedUser)});
+        } catch (error){
+            console.log("updateProfile error", error)
+            throw error
+        }
+    },
 
     fetchAuthenticatedUser: async() => {
         set({isLoading: true})

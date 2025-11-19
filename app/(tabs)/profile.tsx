@@ -1,4 +1,4 @@
-import {View, Text, FlatList, Image, TouchableOpacity} from 'react-native'
+import {View, Text, FlatList, Image, TouchableOpacity, Alert} from 'react-native'
 import {SafeAreaView} from "react-native-safe-area-context";
 import CustomHeader from "../../components/CustomHeader";
 import useAuthStore from "../../store/auth.store";
@@ -6,25 +6,38 @@ import {images, profileImages} from "@/constants";
 import * as ImagePicker from 'expo-image-picker'
 import cn from "clsx";
 import { User } from '@/type';
-import CustomButton from "@/components/CustomButton";
 import {router} from "expo-router";
-import {getLogOut} from "@/lib/appwrite";
+import {getLogOut, updateUserProfileImage, uploadImageToAppwrite} from "@/lib/appwrite";
 
 
 const Profile = () => {
-    const{user, setProfileImage} = useAuthStore()
+    const{user, setProfileImage, updateProfile} = useAuthStore()
 
     const pickImage = async () => {
-        const result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ['images'],
             allowsEditing: true,
             aspect: [1, 1],
             quality: 1,
         });
 
-        if(!result.canceled) {
-            const selectedImage = result.assets[0].uri;
-            setProfileImage(selectedImage)
+        if(!result.canceled && result.assets.length > 0) {
+            return result.assets[0].uri;
+
+        }
+        return null;
+    }
+
+    const handleImageChange = async () => {
+        const imageUrl = await pickImage()
+
+        if(imageUrl){
+            const fileId = await uploadImageToAppwrite(imageUrl, user.$id)
+            if(fileId){
+                await updateUserProfileImage(user.$id, fileId)
+                setProfileImage(prev => ({...prev, profileImage: fileId}))
+            }
         }
     }
 
@@ -84,15 +97,14 @@ const Profile = () => {
                               </View>
                               <View className='flex w-full items items-center justify-center relative'>
                                   <View className='size-20 rounded-full bg-white border border-primary'>
-                                      <Text>
+
                                           { user?.avatar ? (
-                                              <Image source={{uri: user.profileImage }} className='w-full h-full rounded-full'/>
+                                              <Image source={{uri: user.profileImage || user.avatar }} className='w-full h-full rounded-full'/>
                                           ) : (
                                               <Text className='font-bold text-5xl text-black-100'>{initials || ''}</Text>
                                           )}
-                                      </Text>
                                       <View className='absolute bottom-0  -right-5 m-2 '>
-                                          <TouchableOpacity className='flex-center   rounded-full w-8 h-8 border border-white bg-primary' onPress={() => pickImage()}>
+                                          <TouchableOpacity className='flex-center   rounded-full w-8 h-8 border border-white bg-primary' onPress={() => handleImageChange()}>
                                               <Image source={images.pencil} className='size-5' resizeMode='contain'/>
                                           </TouchableOpacity>
                                       </View>

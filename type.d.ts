@@ -114,6 +114,10 @@ interface GetUpdateParams{
     email: string;
     phone: string;
     password?: string;
-    address1?: string;
+    address1: string;
     address2?: string;
+    profileImage?: string;
 }
+
+
+

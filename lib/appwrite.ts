@@ -1,5 +1,7 @@
 import {CreateUserParams, GetMenuParams, GetUpdateParams, SignInParams} from "@/type"
 import {Account, Avatars, Client, Databases, ID, Query, Storage} from "react-native-appwrite"
+import { readAsStringAsync } from 'expo-file-system/legacy';
+
 
 export const appwriteConfig={
     endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
@@ -110,14 +112,14 @@ export const getCategories = async() => {
     }
 }
 
-export const updateUser = async($id:string, {name, email, password, phone, address1, address2 }: GetUpdateParams ) => {
+export const updateUser = async($id: string, params: Partial<GetUpdateParams> ) => {
 
     try {
         return await databases.updateDocument(
             appwriteConfig.databaseId,
             appwriteConfig.useCollectionId,
             $id,
-            {name, email, password, phone, address1, address2}
+            params
         )
     }catch (e){
         throw new Error(e as string)
@@ -129,5 +131,61 @@ export const getLogOut = async() => {
     await account.deleteSession('current')
     } catch (error: any){
         throw new Error(error?.message || "Failed to log out. Please try again later.")
+    }
+}
+
+
+export const uploadImageToAppwrite = async(imageUri, userId): Promise<string> => {
+
+    const fileExtension = imageUri.substring(imageUri.lastIndexOf('.') + 1);
+    const fileName = `profile-${userId}-${ID.unique()}.${fileExtension}`;
+    const fileType = `image/${fileExtension}`;
+
+    const fileInfo = await FileSystem.getInfoAsync(imageUri);
+
+    if(!fileInfo || !fileInfo.size){
+        throw new Error("Failed to get file info")
+    }
+
+
+    const file = {
+        uri: imageUri,
+        name: fileName,
+        type: fileType,
+        size: fileInfo.size
+    }
+
+    try {
+
+        const uploadFile = await storage.createFile(
+            appwriteConfig.bucketId,
+            ID.unique(),
+            file
+        );
+
+        if(!uploadFile || !uploadFile.$id){
+            throw new Error("Upload failed: No file ID returned from Appwrite")
+        }
+        return uploadFile.$id
+    }catch (error){
+        console.log("Error uploading image to Appwrite:", error)
+        throw error
+    }
+
+
+
+}
+
+export const updateUserProfileImage = async($id, imageUrl) => {
+    try {
+        await databases.updateDocument(
+            appwriteConfig.databaseId,
+            appwriteConfig.useCollectionId,
+            $id,
+            {profileImage: imageUrl}
+        )
+    }catch (error){
+        console.log("Error updating user profile image:", error)
+        throw error
     }
 }
